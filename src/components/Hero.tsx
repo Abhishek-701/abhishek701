@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, ChevronDown, FileDown } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, ChevronDown, FileDown } from "lucide-react";
 import headshot from "@/assets/headshot.jpg";
 
 const Hero = () => {
@@ -63,13 +63,22 @@ const Hero = () => {
             <span className="sm:hidden">Phone</span>
           </a>
           <a
-            href="https://linkedin.com/in/abhishek-walvekar"
+            href="https://www.linkedin.com/in/abhishek-walvekar/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
           >
             <Linkedin className="w-4 h-4" />
             <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://github.com/Abhishek-701"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
+          >
+            <Github className="w-4 h-4" />
+            <span>GitHub</span>
           </a>
         </motion.div>
         <motion.div
