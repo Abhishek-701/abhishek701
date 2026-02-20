@@ -1,10 +1,21 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, ChevronDown } from "lucide-react";
+import headshot from "@/assets/headshot.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6">
       <div className="max-w-3xl text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="mb-6 flex justify-center"
+        >
+          <div className="w-28 h-28 rounded-full overflow-hidden ring-2 ring-primary ring-offset-4 ring-offset-background">
+            <img src={headshot} alt="Abhishek Walvekar" className="w-full h-full object-cover" />
+          </div>
+        </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
