@@ -4,7 +4,7 @@ import headshot from "@/assets/headshot.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6">
+    <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="max-w-3xl text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -12,8 +12,8 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="mb-6 flex justify-center"
         >
-          <div className="w-28 h-28 rounded-full overflow-hidden ring-2 ring-primary ring-offset-4 ring-offset-background">
-            <img src={headshot} alt="Abhishek Walvekar" className="w-full h-full object-cover" />
+          <div className="w-32 h-32 rounded-full overflow-hidden ring-2 ring-primary ring-offset-4 ring-offset-background">
+            <img src={headshot} alt="Abhishek Walvekar" className="w-full h-full object-cover object-top" />
           </div>
         </motion.div>
         <motion.p
