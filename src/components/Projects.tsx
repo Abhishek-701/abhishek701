@@ -57,9 +57,12 @@ const Projects = () => {
               <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {project.tech.map((t) => (
-                  <span key={t} className="font-mono text-xs text-muted-foreground">
+                  <span
+                    key={t}
+                    className="font-mono text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20"
+                  >
                     {t}
                   </span>
                 ))}

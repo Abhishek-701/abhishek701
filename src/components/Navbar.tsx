@@ -5,7 +5,7 @@ const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
+  { label: "Soft Skills", href: "#soft-skills" },
   { label: "Contact", href: "#contact" },
 ];
 
