@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, ChevronDown } from "lucide-react";
+import { Mail, Phone, Linkedin, ChevronDown, FileDown } from "lucide-react";
 import headshot from "@/assets/headshot.jpg";
 
 const Hero = () => {
@@ -70,6 +70,21 @@ const Hero = () => {
           >
             <Linkedin className="w-4 h-4" />
             <span>LinkedIn</span>
+          </a>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mb-12"
+        >
+          <a
+            href="/Abhishek_Walvekar_Resume.pdf"
+            download
+            className="inline-flex items-center gap-2 rounded-md border border-primary px-5 py-2.5 text-sm font-mono text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            <FileDown className="w-4 h-4" />
+            Download Resume
           </a>
         </motion.div>
         <motion.a
