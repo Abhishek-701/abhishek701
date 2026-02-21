@@ -45,15 +45,15 @@ const Experience = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-foreground mb-2"
+          className="text-3xl font-bold font-heading text-foreground mb-2"
         >
-          <span className="font-mono text-primary text-lg mr-2">02.</span>
-          Experience
+          <span className="font-mono text-primary text-lg mr-2">03.</span>
+          Work Experience
         </motion.h2>
         <div className="w-16 h-0.5 bg-primary mb-12" />
 
         <div className="relative">
-          <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border" />
+          <div className="absolute left-[7px] top-2 bottom-2 w-px bg-primary/20" />
 
           <div className="space-y-12">
             {experiences.map((exp, i) => (
@@ -65,23 +65,25 @@ const Experience = () => {
                 transition={{ delay: i * 0.1 }}
                 className="relative pl-10"
               >
-                <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-primary bg-background" />
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                  <h3 className="text-lg font-semibold text-foreground">{exp.title}</h3>
-                  <span className="font-mono text-xs text-muted-foreground">{exp.period}</span>
+                <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-primary bg-background shadow-[0_0_8px_hsl(var(--primary)/0.4)]" />
+                <div className="bg-card border border-border rounded-lg p-5 hover:border-primary/30 transition-colors">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                    <h3 className="text-lg font-semibold font-heading text-foreground">{exp.title}</h3>
+                    <span className="font-mono text-xs text-muted-foreground">{exp.period}</span>
+                  </div>
+                  <p className="text-primary text-sm mb-3 flex items-center gap-1.5">
+                    <Briefcase className="w-3.5 h-3.5" />
+                    {exp.company} · {exp.location}
+                  </p>
+                  <ul className="space-y-2">
+                    {exp.bullets.map((bullet, j) => (
+                      <li key={j} className="text-muted-foreground text-sm leading-relaxed flex gap-2">
+                        <span className="text-primary mt-1.5 shrink-0">▹</span>
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-primary text-sm mb-3 flex items-center gap-1.5">
-                  <Briefcase className="w-3.5 h-3.5" />
-                  {exp.company} · {exp.location}
-                </p>
-                <ul className="space-y-2">
-                  {exp.bullets.map((bullet, j) => (
-                    <li key={j} className="text-muted-foreground text-sm leading-relaxed flex gap-2">
-                      <span className="text-primary mt-1.5 shrink-0">▹</span>
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
               </motion.div>
             ))}
           </div>

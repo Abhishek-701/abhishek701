@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Send } from "lucide-react";
+
+const links = [
+  { icon: Mail, label: "walvekarabhishek701@gmail.com", href: "mailto:walvekarabhishek701@gmail.com" },
+  { icon: Phone, label: "+1 (773) 991-2944", href: "tel:+17739912944" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/abhishek-walvekar/", external: true },
+  { icon: Github, label: "GitHub", href: "https://github.com/Abhishek-701", external: true },
+];
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -21,9 +28,9 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-foreground mb-2"
+          className="text-3xl font-bold font-heading text-foreground mb-2"
         >
-          <span className="font-mono text-primary text-lg mr-2">05.</span>
+          <span className="font-mono text-primary text-lg mr-2">06.</span>
           Get In Touch
         </motion.h2>
         <div className="w-16 h-0.5 bg-primary mx-auto mb-6" />
@@ -31,10 +38,30 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-muted-foreground text-sm mb-10"
+          className="text-muted-foreground text-sm mb-8"
         >
-          I'm currently looking for new grad opportunities. Whether you have a question or just want to say hi, feel free to reach out!
+          Open to full-time opportunities, freelance projects, and collaborations.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap items-center justify-center gap-4 mb-10"
+        >
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border text-sm text-muted-foreground hover:border-primary/40 hover:text-primary transition-colors"
+            >
+              <l.icon className="w-4 h-4" />
+              {l.label}
+            </a>
+          ))}
+        </motion.div>
 
         <motion.form
           onSubmit={handleSubmit}
@@ -92,18 +119,6 @@ const Contact = () => {
             Send Message
           </button>
         </motion.form>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-10 flex items-center justify-center gap-2 text-muted-foreground text-sm"
-        >
-          <Mail className="w-4 h-4" />
-          <a href="mailto:walvekarabhishek701@gmail.com" className="hover:text-primary transition-colors">
-            walvekarabhishek701@gmail.com
-          </a>
-        </motion.div>
       </div>
     </section>
   );

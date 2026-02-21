@@ -2,11 +2,13 @@ import { motion } from "framer-motion";
 
 const skills = {
   Languages: ["Java", "Python", "JavaScript (ES6)", "TypeScript", "SQL", "HTML5", "CSS"],
-  Frameworks: ["React", "Node.js", "Django", "Spring Boot", "REST APIs", "GraphQL"],
+  Frameworks: ["Spring Boot", "React", "Node.js", "Django", "REST APIs", "GraphQL"],
   Databases: ["MongoDB", "PostgreSQL", "MySQL", "Firebase Firestore"],
   "Cloud & DevOps": ["AWS (S3, Lambda, EMR, Bedrock)", "Docker", "Git", "CI/CD (GitHub Actions)"],
   Testing: ["JUnit", "PyTest", "Unit Testing", "Integration Testing", "API Testing"],
 };
+
+const highlighted = new Set(["Java", "Spring Boot", "React", "AWS (S3, Lambda, EMR, Bedrock)"]);
 
 const container = {
   hidden: { opacity: 0 },
@@ -26,9 +28,9 @@ const Skills = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-foreground mb-2"
+          className="text-3xl font-bold font-heading text-foreground mb-2"
         >
-          <span className="font-mono text-primary text-lg mr-2">01.</span>
+          <span className="font-mono text-primary text-lg mr-2">02.</span>
           Technical Skills
         </motion.h2>
         <div className="w-16 h-0.5 bg-primary mb-12" />
@@ -47,7 +49,11 @@ const Skills = () => {
                 {items.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-secondary text-secondary-foreground text-sm rounded-md font-mono"
+                    className={`px-3 py-1.5 text-sm rounded-full font-mono transition-colors ${
+                      highlighted.has(skill)
+                        ? "bg-primary/15 text-primary border border-primary/30 shadow-[0_0_12px_hsl(var(--primary)/0.15)]"
+                        : "bg-secondary text-secondary-foreground"
+                    }`}
                   >
                     {skill}
                   </span>
