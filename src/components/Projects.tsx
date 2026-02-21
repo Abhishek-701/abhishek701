@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Folder } from "lucide-react";
+import { ExternalLink, Folder, Github } from "lucide-react";
 
 const projects = [
   {
     title: "Distributed LLM System",
     tech: ["Scala", "Spark", "AWS EMR", "Lambda", "gRPC"],
     description:
-      "Built a distributed text-processing pipeline in Spark to run encoder–decoder style workflows in parallel. Exposed inference via REST and gRPC, deployed on AWS Lambda with structured config and logging.",
+      "Built a distributed text-processing pipeline in Spark (Scala) for encoder-decoder style workflows. Exposed inference via REST and gRPC; deployed on AWS Lambda with Typesafe Config and Logback for structured logging.",
   },
   {
     title: "Interactive Data Visualization Dashboard",
     tech: ["D3.js", "JavaScript", "HTML", "CSS"],
     description:
-      "Built an interactive D3 dashboard for exploring biological datasets with linked views (scatter plots + radar charts) that stay in sync. Optimized render logic for smooth interaction under heavy use.",
+      "Interactive dashboard for exploring biological datasets and morphogen gradient patterns. Features linked scatter/radar chart views with optimized render logic for smooth performance.",
   },
   {
     title: "Crypto & Stock Market Advisor",
     tech: ["React", "Django", "MongoDB"],
     description:
-      "Integrated third-party market data APIs with caching and rate-limit handling. Built a normalization layer for portfolio analytics, optimized MongoDB queries to under 300ms, and wired CI with GitHub Actions.",
+      "Integrated third-party market data APIs with caching and rate-limit handling. Added compound indexes in MongoDB reducing read latency to under 300ms; wired with GitHub Actions CI.",
   },
 ];
 
@@ -30,14 +30,14 @@ const Projects = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-foreground mb-2"
+          className="text-3xl font-bold font-heading text-foreground mb-2"
         >
-          <span className="font-mono text-primary text-lg mr-2">03.</span>
-          Projects
+          <span className="font-mono text-primary text-lg mr-2">04.</span>
+          Featured Projects
         </motion.h2>
         <div className="w-16 h-0.5 bg-primary mb-12" />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={i}
@@ -45,23 +45,26 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              className="group relative bg-card border border-border rounded-lg p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.1)] flex flex-col"
             >
               <div className="flex items-center justify-between mb-4">
                 <Folder className="w-10 h-10 text-primary" />
-                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                <div className="flex items-center gap-3">
+                  <Github className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+              <h3 className="text-lg font-semibold font-heading text-foreground mb-2 group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5 flex-1">
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="font-mono text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20"
+                    className="font-mono text-[11px] px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20"
                   >
                     {t}
                   </span>
