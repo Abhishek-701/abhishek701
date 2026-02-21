@@ -12,7 +12,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="mb-6 flex justify-center"
         >
-          <div className="w-32 h-32 rounded-full overflow-hidden ring-2 ring-primary ring-offset-4 ring-offset-background">
+          <div className="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden ring-2 ring-primary ring-offset-4 ring-offset-background">
             <img src={headshot} alt="Abhishek Walvekar" className="w-full h-full object-cover object-top" />
           </div>
         </motion.div>
