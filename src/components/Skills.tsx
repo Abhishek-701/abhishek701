@@ -41,7 +41,7 @@ const Skills = () => (
                   key={s}
                   className={`rounded-full px-3 py-1 font-mono text-xs transition-colors ${
                     primary.has(s)
-                      ? "bg-primary/15 text-primary border border-primary/25 glow-sm"
+                      ? "bg-primary/15 text-primary border border-primary/25"
                       : "bg-secondary text-secondary-foreground"
                   }`}
                 >
