@@ -2,84 +2,93 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
+const sections = [
+  "About",
+  "Skills",
+  "Experience",
+  "Projects",
+  "Services",
+  "Contact",
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
+    <motion.header
+      initial={{ y: -80 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : ""
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        scrolled
+          ? "bg-background/70 backdrop-blur-lg border-b border-border/50"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-bold text-primary text-lg font-heading">
-          AW
+      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        <a
+          href="#"
+          className="font-heading text-xl font-bold tracking-tight text-primary"
+        >
+          {"<AW />"}
         </a>
-        <div className="hidden sm:flex items-center gap-6">
-          {navItems.map((item, i) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <span className="font-mono text-primary text-xs mr-1">0{i + 1}.</span>
-              {item.label}
-            </a>
+
+        {/* Desktop */}
+        <ul className="hidden items-center gap-1 md:flex">
+          {sections.map((s) => (
+            <li key={s}>
+              <a
+                href={`#${s.toLowerCase()}`}
+                className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-primary hover:bg-primary/5"
+              >
+                {s}
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
+
+        {/* Mobile toggle */}
         <button
-          className="sm:hidden text-muted-foreground hover:text-primary transition-colors"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-muted-foreground hover:text-primary"
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-      </div>
+      </nav>
 
       <AnimatePresence>
-        {mobileOpen && (
+        {open && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="sm:hidden bg-background/95 backdrop-blur-md border-b border-border overflow-hidden"
+            className="overflow-hidden border-b border-border/50 bg-background/95 backdrop-blur-lg md:hidden"
           >
-            <div className="flex flex-col px-6 py-4 gap-4">
-              {navItems.map((item, i) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <span className="font-mono text-primary text-xs mr-2">0{i + 1}.</span>
-                  {item.label}
-                </a>
+            <ul className="flex flex-col gap-1 px-6 py-4">
+              {sections.map((s) => (
+                <li key={s}>
+                  <a
+                    href={`#${s.toLowerCase()}`}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5"
+                  >
+                    {s}
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </motion.header>
   );
 };
 
