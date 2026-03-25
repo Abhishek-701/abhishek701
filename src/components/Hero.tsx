@@ -1,12 +1,18 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Download } from "lucide-react";
+import { Download, ArrowRight, Github, Linkedin } from "lucide-react";
 import headshot from "@/assets/headshot.jpg";
 
 const roles = [
   "Full Stack Developer",
   "Distributed Systems Engineer",
   "CS Graduate @ UIC",
+];
+
+const stats = [
+  { value: "3.72", label: "GPA" },
+  { value: "3", label: "Internships" },
+  { value: "MS", label: "CS @ UIC" },
 ];
 
 const Hero = () => {
@@ -19,7 +25,7 @@ const Hero = () => {
     setText((prev) => {
       if (!deleting) {
         if (prev.length < full.length) return full.slice(0, prev.length + 1);
-        setTimeout(() => setDeleting(true), 2000);
+        setTimeout(() => setDeleting(true), 2200);
         return prev;
       }
       if (prev.length > 0) return prev.slice(0, -1);
@@ -30,111 +36,202 @@ const Hero = () => {
   }, [roleIdx, deleting]);
 
   useEffect(() => {
-    const id = setTimeout(tick, deleting ? 35 : 70);
+    const id = setTimeout(tick, deleting ? 38 : 72);
     return () => clearTimeout(id);
   }, [tick, text, deleting]);
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
-      {/* Grid bg */}
+    <section className="relative min-h-screen overflow-hidden px-6 pb-20 pt-28">
+      {/* Subtle warm grid */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
+            "linear-gradient(rgba(17,17,17,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(17,17,17,0.04) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
         }}
       />
 
-      {/* Glow orb */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[140px]" />
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-16 md:flex-row md:items-center md:justify-between">
+        {/* ── Left: Text ── */}
+        <div className="flex-1 md:max-w-xl">
+          {/* Status */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="mb-8 inline-flex items-center gap-2.5"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[#888880]">
+              Available for Opportunities
+            </span>
+          </motion.div>
 
-      <div className="relative z-10 flex max-w-3xl flex-col items-center text-center">
-        {/* Avatar */}
+          {/* Name */}
+          <motion.h1
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.7 }}
+            className="font-heading font-extrabold leading-[0.95] tracking-tight text-[#111111]"
+            style={{ fontSize: "clamp(3.5rem, 7.5vw, 6.5rem)" }}
+          >
+            Abhishek
+            <br />
+            <span style={{ color: "#0047FF" }}>Walvekar</span>
+          </motion.h1>
+
+          {/* Typewriter */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.35 }}
+            className="mt-6 flex items-center gap-3"
+          >
+            <div className="h-px w-10 bg-[#0047FF]" />
+            <span className="font-mono text-sm text-[#888880]">
+              {text}
+              <motion.span
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 0.85, repeat: Infinity }}
+              >
+                _
+              </motion.span>
+            </span>
+          </motion.div>
+
+          {/* Bio */}
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45 }}
+            className="mt-6 max-w-md text-[15px] leading-relaxed text-[#888880]"
+          >
+            Passionate about scalable full-stack applications, distributed
+            systems, and data-driven solutions.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55 }}
+            className="mt-8 flex flex-wrap gap-3"
+          >
+            <a
+              href="#projects"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#111111] px-7 py-3 text-sm font-bold text-white transition-all hover:bg-[#0047FF]"
+            >
+              View Work
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="/Abhishek_Walvekar_Resume.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-full border-2 border-[#E8E4D8] bg-white px-7 py-3 text-sm font-bold text-[#111111] transition-all hover:border-[#111111]"
+            >
+              <Download className="h-4 w-4" />
+              Resume
+            </a>
+          </motion.div>
+
+          {/* Stats */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+            className="mt-12 flex gap-8 border-t border-[#E8E4D8] pt-8"
+          >
+            {stats.map((s, i) => (
+              <div key={i}>
+                <div
+                  className="font-heading text-3xl font-extrabold"
+                  style={{ color: "#0047FF" }}
+                >
+                  {s.value}
+                </div>
+                <div className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-[#888880]">
+                  {s.label}
+                </div>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Social */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.85 }}
+            className="mt-8 flex gap-4"
+          >
+            <a
+              href="https://github.com/Abhishek-701"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#C8C4BC] hover:text-[#111111] transition-colors"
+            >
+              <Github className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/abhishek-walvekar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#C8C4BC] hover:text-[#111111] transition-colors"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+          </motion.div>
+        </div>
+
+        {/* ── Right: Photo ── */}
         <motion.div
-          initial={{ scale: 0.7, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-10"
+          initial={{ opacity: 0, x: 32 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="shrink-0 md:w-72 lg:w-80"
         >
           <div className="relative">
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary/60 to-primary/20 blur-sm" />
+            {/* Shadow blocks */}
+            <div
+              className="absolute inset-0 translate-x-5 translate-y-5 rounded-3xl"
+              style={{ backgroundColor: "#0047FF", opacity: 0.08 }}
+            />
+            <div
+              className="absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-3xl"
+              style={{ backgroundColor: "#0047FF", opacity: 0.05 }}
+            />
+
             <img
               src={headshot}
               alt="Abhishek Walvekar"
-              className="relative h-48 w-48 rounded-full object-cover object-top ring-2 ring-primary/40 ring-offset-4 ring-offset-background md:h-56 md:w-56"
+              className="relative w-full rounded-3xl object-cover object-top"
+              style={{ aspectRatio: "4/5" }}
             />
+
+            {/* Blue accent badge */}
+            <div
+              className="absolute -bottom-5 -left-5 flex h-[68px] w-[68px] flex-col items-center justify-center rounded-2xl"
+              style={{ backgroundColor: "#0047FF" }}
+            >
+              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-white leading-tight text-center">
+                MS
+                <br />
+                CS
+              </span>
+            </div>
+
+            {/* UIC badge */}
+            <div className="absolute -top-4 -right-4 flex items-center gap-1.5 rounded-full bg-white border border-[#E8E4D8] px-3.5 py-1.5 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-[#E8220D]" />
+              <span className="font-mono text-[10px] font-bold tracking-wider text-[#111111]">
+                UIC
+              </span>
+            </div>
           </div>
         </motion.div>
-
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.5 }}
-          className="mb-3 font-heading text-5xl font-bold tracking-tight text-foreground md:text-7xl"
-        >
-          Abhishek{" "}
-          <span className="text-gradient">Walvekar</span>
-        </motion.h1>
-
-        {/* Typewriter */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="mb-6 h-8"
-        >
-          <span className="font-mono text-lg text-primary">
-            {text}
-            <span className="ml-0.5 animate-pulse">▍</span>
-          </span>
-        </motion.div>
-
-        {/* Bio */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="mb-10 max-w-lg text-muted-foreground"
-        >
-          Passionate about building scalable full-stack applications, distributed
-          systems, and data-driven solutions.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.55, duration: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-4"
-        >
-          <a
-            href="#projects"
-            className="rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:glow-sm hover:brightness-110"
-          >
-            View My Work
-          </a>
-          <a
-            href="/Abhishek_Walvekar_Resume.pdf"
-            download
-            className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-2.5 text-sm font-mono text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-          >
-            <Download className="h-4 w-4" />
-            Resume
-          </a>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.a
-          href="#about"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="mt-20 animate-bounce text-muted-foreground/50 hover:text-primary transition-colors"
-        >
-          <ArrowDown className="h-5 w-5" />
-        </motion.a>
       </div>
     </section>
   );

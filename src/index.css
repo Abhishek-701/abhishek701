@@ -1,93 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @layer base {
   :root {
-    --background: 210 40% 96%;
-    --foreground: 222 47% 11%;
+    --background: 40 33% 97%;
+    --foreground: 0 0% 7%;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 0 0% 7%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 199 89% 38%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 228 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 30% 90%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 25% 92%;
-    --muted-foreground: 215 16% 42%;
-    --accent: 199 89% 38%;
+    --secondary: 40 20% 93%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 40 15% 94%;
+    --muted-foreground: 30 5% 52%;
+    --accent: 228 100% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 20% 85%;
-    --input: 214 20% 85%;
-    --ring: 199 89% 38%;
-    --radius: 0.5rem;
+    --border: 35 15% 87%;
+    --input: 35 15% 87%;
+    --ring: 228 100% 50%;
+    --radius: 0.75rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 214 20% 85%;
-    --sidebar-ring: 199 89% 38%;
-  }
-
-  .dark {
-    --background: 225 43% 5%;
-    --foreground: 213 31% 91%;
-    --card: 224 42% 8%;
-    --card-foreground: 213 31% 91%;
-    --popover: 224 42% 8%;
-    --popover-foreground: 213 31% 91%;
-    --primary: 187 100% 50%;
-    --primary-foreground: 225 43% 5%;
-    --secondary: 224 32% 12%;
-    --secondary-foreground: 213 31% 91%;
-    --muted: 224 32% 12%;
-    --muted-foreground: 215 20% 55%;
-    --accent: 187 100% 50%;
-    --accent-foreground: 225 43% 5%;
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 213 31% 91%;
-    --border: 224 20% 14%;
-    --input: 224 20% 14%;
-    --ring: 187 100% 50%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-border: 35 15% 87%;
+    --sidebar-ring: 228 100% 50%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  html { scroll-behavior: smooth; }
 }
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(199 70% 50%));
-  }
-  .glow-sm {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.15);
-  }
-  .glow-md {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.2);
-  }
+/* ─── Marquee ─── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 40s linear infinite;
+  will-change: transform;
+}
+.animate-marquee-right {
+  animation: marquee-right 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee-row:hover .animate-marquee-left,
+.marquee-row:hover .animate-marquee-right {
+  animation-play-state: paused;
 }

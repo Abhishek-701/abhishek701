@@ -36,53 +36,85 @@ const jobs = [
 ];
 
 const Experience = () => (
-  <section id="experience" className="py-28 px-6">
-    <div className="mx-auto max-w-3xl">
+  <section id="experience" className="border-t border-[#E8E4D8] py-28 px-6">
+    <div className="mx-auto max-w-6xl">
+      <motion.p
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-3 font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#888880]"
+      >
+        03 — Experience
+      </motion.p>
+
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mb-10 font-heading text-3xl font-bold text-foreground"
+        transition={{ delay: 0.05 }}
+        className="mb-14 font-heading font-extrabold leading-tight text-[#111111]"
+        style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
       >
-        <span className="mr-3 font-mono text-base text-primary">03.</span>
-        Work Experience
+        Where I've{" "}
+        <span style={{ color: "#0047FF" }}>worked</span>
       </motion.h2>
 
-      <div className="relative border-l border-border pl-8">
+      <div className="space-y-5">
         {jobs.map((job, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: -16 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="relative mb-12 last:mb-0"
+            className="group grid grid-cols-[72px_1fr] overflow-hidden rounded-2xl border border-[#E8E4D8] bg-white transition-all duration-300 hover:border-[#0047FF]/30 hover:shadow-[0_8px_40px_rgba(0,71,255,0.08)]"
           >
-            {/* Dot */}
-            <span className="absolute -left-[41px] top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background" />
-
-            <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 className="font-heading text-lg font-semibold text-foreground">
-                {job.role}
-              </h3>
-              <span className="shrink-0 font-mono text-xs text-muted-foreground">
-                {job.when}
+            {/* Number column */}
+            <div className="flex items-start justify-center border-r border-[#E8E4D8] pt-8 transition-colors group-hover:bg-[#0047FF] group-hover:border-[#0047FF]">
+              <span
+                className="font-heading text-3xl font-extrabold text-[#E8E4D8] transition-colors group-hover:text-white"
+                style={{ lineHeight: 1 }}
+              >
+                {String(i + 1).padStart(2, "0")}
               </span>
             </div>
-            <p className="mt-0.5 text-sm text-primary">
-              {job.company} · {job.where}
-            </p>
-            <ul className="mt-3 space-y-2">
-              {job.bullets.map((b, j) => (
-                <li
-                  key={j}
-                  className="flex gap-2 text-sm leading-relaxed text-muted-foreground"
-                >
-                  <span className="mt-1 shrink-0 text-primary">▸</span>
-                  {b}
-                </li>
-              ))}
-            </ul>
+
+            {/* Content column */}
+            <div className="p-8">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <div>
+                  <h3 className="font-heading text-lg font-bold text-[#111111]">
+                    {job.role}
+                  </h3>
+                  <p className="mt-0.5 text-sm font-semibold" style={{ color: "#0047FF" }}>
+                    {job.company}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 shrink-0">
+                  <span className="rounded-full border border-[#E8E4D8] bg-[#F9F7F2] px-3 py-1 font-mono text-[11px] font-medium text-[#888880]">
+                    {job.when}
+                  </span>
+                  <span className="font-mono text-[11px] text-[#BBBBBB]">
+                    {job.where}
+                  </span>
+                </div>
+              </div>
+
+              <ul className="mt-5 space-y-2.5">
+                {job.bullets.map((b, j) => (
+                  <li
+                    key={j}
+                    className="flex gap-3 text-sm leading-relaxed text-[#666660]"
+                  >
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                      style={{ backgroundColor: "#0047FF" }}
+                    />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         ))}
       </div>
