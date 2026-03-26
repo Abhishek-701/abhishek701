@@ -171,7 +171,7 @@ const Hero = () => {
               href="https://github.com/Abhishek-701"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#C8C4BC] hover:text-[#111111] transition-colors"
+              className="flex items-center justify-center h-9 w-9 rounded-full bg-[#111111] text-white hover:bg-[#333333] transition-colors"
             >
               <Github className="h-5 w-5" />
             </a>
@@ -179,7 +179,7 @@ const Hero = () => {
               href="https://www.linkedin.com/in/abhishek-walvekar/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#C8C4BC] hover:text-[#111111] transition-colors"
+              className="flex items-center justify-center h-9 w-9 rounded-full bg-[#0A66C2] text-white hover:bg-[#004182] transition-colors"
             >
               <Linkedin className="h-5 w-5" />
             </a>

@@ -18,9 +18,9 @@ const Footer = () => (
 
       <div className="flex items-center gap-5">
         {[
-          { icon: Github, href: "https://github.com/Abhishek-701", label: "GitHub" },
-          { icon: Linkedin, href: "https://www.linkedin.com/in/abhishek-walvekar/", label: "LinkedIn" },
-          { icon: Mail, href: "mailto:walvekarabhishek701@gmail.com", label: "Email" },
+          { icon: Github, href: "https://github.com/Abhishek-701", label: "GitHub", bg: "bg-[#111111] hover:bg-[#333333]" },
+          { icon: Linkedin, href: "https://www.linkedin.com/in/abhishek-walvekar/", label: "LinkedIn", bg: "bg-[#0A66C2] hover:bg-[#004182]" },
+          { icon: Mail, href: "mailto:walvekarabhishek701@gmail.com", label: "Email", bg: "bg-[#C8441A] hover:bg-[#a33515]" },
         ].map((l) => (
           <a
             key={l.href}
@@ -28,7 +28,7 @@ const Footer = () => (
             target="_blank"
             rel="noopener noreferrer"
             aria-label={l.label}
-            className="text-[#BBBBBB] transition-colors hover:text-[#0047FF]"
+            className={`flex items-center justify-center h-8 w-8 rounded-full text-white transition-colors ${l.bg}`}
           >
             <l.icon className="h-4 w-4" />
           </a>
