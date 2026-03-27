@@ -10,6 +10,8 @@ const projects = [
     tag: "Systems / Cloud",
     accentBg: "#0047FF",
     accentText: "#EEF0FF",
+    github: "https://github.com/Abhishek-701/Hybrid-LLM-Gateway-Akka-gRPC-AWS-Bedrock-",
+    live: null,
   },
   {
     num: "02",
@@ -19,6 +21,8 @@ const projects = [
     tag: "Data / Visualization",
     accentBg: "#111111",
     accentText: "#F9F7F2",
+    github: "https://github.com/Abhishek-701/Patterns-in-Pattering",
+    live: null,
   },
   {
     num: "03",
@@ -28,6 +32,8 @@ const projects = [
     tag: "Full Stack",
     accentBg: "#0047FF",
     accentText: "#EEF0FF",
+    github: null,
+    live: null,
   },
 ];
 
@@ -77,8 +83,20 @@ const Projects = () => (
                 {p.tag}
               </span>
               <div className="flex gap-2.5" style={{ color: p.accentText, opacity: 0.5 }}>
-                <Github className="h-4 w-4 cursor-pointer hover:opacity-100 transition-opacity" />
-                <ExternalLink className="h-4 w-4 cursor-pointer hover:opacity-100 transition-opacity" />
+                {p.github ? (
+                  <a href={p.github} target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
+                    <Github className="h-4 w-4" />
+                  </a>
+                ) : (
+                  <Github className="h-4 w-4 opacity-30" />
+                )}
+                {p.live ? (
+                  <a href={p.live} target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                ) : (
+                  <ExternalLink className="h-4 w-4 opacity-30" />
+                )}
               </div>
             </div>
 
