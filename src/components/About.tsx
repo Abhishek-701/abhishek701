@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, GraduationCap, Briefcase, Trophy } from "lucide-react";
-
-const info = [
-  { icon: MapPin, label: "Location", value: "Chicago, IL" },
-  { icon: GraduationCap, label: "Education", value: "MS CS @ UIC · 3.72 GPA" },
-  { icon: Briefcase, label: "Status", value: "Open to Opportunities" },
-  { icon: Trophy, label: "Outside Work", value: "Soccer · Basketball · Squash" },
-];
+import { ChatBubbles } from "./ChatBubbles";
 
 const About = () => (
   <section id="about" className="border-t border-[#E8E4D8] py-28 px-6">
@@ -64,41 +57,15 @@ const About = () => (
           </motion.div>
         </div>
 
-        {/* Right: info list */}
+        {/* Right: chat bubbles — each bubble tight-wrapped by pretext */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="self-center"
+          className="self-stretch"
         >
-          <div className="divide-y divide-[#E8E4D8] rounded-2xl border border-[#E8E4D8] bg-white overflow-hidden">
-            {info.map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 + i * 0.07 }}
-                className="flex items-start gap-4 px-6 py-5"
-              >
-                <div
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
-                  style={{ backgroundColor: "#EEF0FF" }}
-                >
-                  <item.icon className="h-4 w-4" style={{ color: "#0047FF" }} />
-                </div>
-                <div>
-                  <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#BBBBBB]">
-                    {item.label}
-                  </p>
-                  <p className="mt-0.5 text-sm font-semibold text-[#111111]">
-                    {item.value}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <ChatBubbles />
         </motion.div>
       </div>
     </div>

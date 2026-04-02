@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import { Download, ArrowRight, Github, Linkedin } from "lucide-react";
+import { prepareWithSegments, layoutWithLines } from "@chenglou/pretext";
 import headshot from "@/assets/headshot.jpg";
 
 const roles = [
@@ -9,16 +10,42 @@ const roles = [
   "CS Graduate @ UIC",
 ];
 
+// The canvas font that matches Tailwind's font-mono text-sm (14px)
+const MONO_FONT = "14px ui-monospace, SFMono-Regular, Menlo, monospace";
+const LINE_HEIGHT = 20;
+
 const stats = [
   { value: "3.72", label: "GPA" },
   { value: "3", label: "Internships" },
   { value: "MS", label: "CS @ UIC" },
 ];
 
+// Measure each role's exact pixel width with pretext once — no DOM, no reflow.
+// prepareWithSegments() does the canvas font measurement pass;
+// layoutWithLines() returns per-line { text, width } via pure arithmetic.
+function measureRoleWidths(): number[] {
+  try {
+    return roles.map((role) => {
+      const prepared = prepareWithSegments(role, MONO_FONT);
+      const { lines } = layoutWithLines(prepared, 10_000, LINE_HEIGHT);
+      return lines[0]?.width ?? 0;
+    });
+  } catch {
+    return roles.map(() => 0);
+  }
+}
+
 const Hero = () => {
   const [roleIdx, setRoleIdx] = useState(0);
   const [text, setText] = useState("");
   const [deleting, setDeleting] = useState(false);
+  const [waiting, setWaiting] = useState(false);
+
+  // Exact pixel widths for each role, measured by pretext
+  const roleWidths = useRef<number[]>([]);
+  useEffect(() => {
+    roleWidths.current = measureRoleWidths();
+  }, []);
 
   const tick = useCallback(() => {
     const full = roles[roleIdx];
@@ -29,16 +56,26 @@ const Hero = () => {
         return prev;
       }
       if (prev.length > 0) return prev.slice(0, -1);
+      // Finished deleting — pause briefly while underline resets, then type next role
       setDeleting(false);
-      setRoleIdx((i) => (i + 1) % roles.length);
+      setWaiting(true);
+      setTimeout(() => {
+        setRoleIdx((i) => (i + 1) % roles.length);
+        setWaiting(false);
+      }, 220);
       return "";
     });
   }, [roleIdx, deleting]);
 
   useEffect(() => {
+    if (waiting) return;
     const id = setTimeout(tick, deleting ? 38 : 72);
     return () => clearTimeout(id);
-  }, [tick, text, deleting]);
+  }, [tick, text, deleting, waiting]);
+
+  // Target underline width: pretext-measured width for the current role.
+  // Falls back to 0 if measurements haven't landed yet.
+  const targetW = roleWidths.current[roleIdx] ?? 0;
 
   return (
     <section className="relative min-h-screen overflow-hidden px-6 pb-20 pt-28">
@@ -84,14 +121,25 @@ const Hero = () => {
             <span style={{ color: "#0047FF" }}>Walvekar</span>
           </motion.h1>
 
-          {/* Typewriter */}
+          {/* Typewriter + pretext-measured leading underline */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.35 }}
-            className="mt-6 flex items-center gap-3"
+            className="mt-6 flex flex-col gap-1.5"
           >
-            <div className="h-px w-10 bg-[#0047FF]" />
+            {/*
+              The underline animates to the pretext-measured pixel width of the
+              current role — it always leads the cursor, snapping to the exact
+              final width before the last character is typed.
+            */}
+            <motion.div
+              className="h-[2px] rounded-full"
+              style={{ backgroundColor: "#0047FF" }}
+              animate={{ width: targetW > 0 ? targetW : 40 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            />
+
             <span className="font-mono text-sm text-[#888880]">
               {text}
               <motion.span
