@@ -35,6 +35,17 @@ const projects = [
     github: null,
     live: null,
   },
+  {
+    num: "04",
+    title: "CodeContext MCP",
+    tech: ["Python", "tree-sitter", "PostgreSQL", "pgvector", "FastMCP", "watchdog"],
+    desc: "Persistent, live-indexed codebase context server with an MCP interface. Watches a repo, indexes symbols via tree-sitter, and exposes semantic + exact-match search tools so LLM agents can query code that doesn't fit in a context window.",
+    tag: "Developer Tools / AI",
+    accentBg: "#111111",
+    accentText: "#F9F7F2",
+    github: "https://github.com/Abhishek-701/codecontext-mcp",
+    live: null,
+  },
 ];
 
 const Projects = () => (
@@ -61,7 +72,7 @@ const Projects = () => (
         <span style={{ color: "#0047FF" }}>built</span>
       </motion.h2>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {projects.map((p, i) => (
           <motion.article
             key={i}
