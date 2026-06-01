@@ -62,8 +62,8 @@ const Skills = () => (
           </h2>
         </div>
         <p className="max-w-xs text-sm leading-relaxed text-[#666660]">
-          A full stack skill set spanning languages, frameworks, cloud
-          platforms, and data engineering tools.
+          Languages, frameworks, cloud platforms, and data engineering
+          tools — the full range.
         </p>
       </motion.div>
     </div>

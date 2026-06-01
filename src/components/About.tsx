@@ -37,22 +37,20 @@ const About = () => (
             className="space-y-5 text-[15px] leading-[1.9] text-[#666660]"
           >
             <p>
-              I'm a Computer Science graduate student at the University of
-              Illinois Chicago (GPA: 3.78), driven by a deep interest in
-              scalable systems, clean software architecture, and thoughtful
-              engineering.
+              I'm an MS CS student at UIC (GPA: 3.78). I care a lot about
+              building systems that are reliable, well-designed, and actually
+              maintainable long-term.
             </p>
             <p>
-              Over three internships across India — spanning full-stack,
-              backend, and data engineering — I've built ETL pipelines,
-              CEO-facing dashboards, real-time analytics services, and
-              production REST APIs. I thrive at the intersection of reliable
-              backend systems and polished user experiences.
+              I've done three internships in India, working on ETL pipelines,
+              CEO dashboards, real-time analytics, and production REST APIs.
+              I'm comfortable on the backend and I like working close to the
+              frontend too.
             </p>
             <p>
-              Actively seeking Full Stack and Backend Engineering roles,
-              particularly those involving microservices, distributed systems,
-              and cloud-native platforms.
+              Looking for full-time roles in full-stack or backend engineering.
+              Especially interested in teams working on distributed systems,
+              microservices, or cloud infrastructure.
             </p>
           </motion.div>
         </div>

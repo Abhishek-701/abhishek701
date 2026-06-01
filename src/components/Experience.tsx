@@ -7,9 +7,9 @@ const jobs = [
     where: "Kolhapur, India",
     when: "Oct 2022 – Feb 2023",
     bullets: [
-      "Diagnosed sequential query patterns and missing indexes in an Oracle Data Integrator ETL pipeline; restructured jobs with batch processing and targeted indexes to improve ingestion throughput by 25%.",
-      "Added quantitative analysis features to a Laboratory Information Management System, cutting reporting turnaround by 15%.",
-      "Created real-time dashboards in ZKoss so teams could track operational quality metrics without manual reporting.",
+      "Found sequential query patterns and missing indexes in an Oracle Data Integrator ETL pipeline. Rebuilt the jobs with batch processing and better indexes, improving ingestion throughput by 25%.",
+      "Added quantitative analysis features to the LIMS, cutting reporting turnaround by 15%.",
+      "Built real-time dashboards in ZKoss so teams could track quality metrics without running manual reports.",
     ],
   },
   {
@@ -18,9 +18,9 @@ const jobs = [
     where: "Mumbai, India",
     when: "Jun 2022 – Jul 2022",
     bullets: [
-      "Delivered a CEO-facing analytics dashboard; reduced weekly reporting turnaround time by 30%.",
-      "Implemented Spring Boot REST APIs backed by MySQL (CRUD + validation + error handling) for internal enterprise workflows.",
-      "Built interactive KPI charts using Angular and Apex Charts to support stakeholder reviews and decision-making.",
+      "Built a CEO-facing analytics dashboard that cut weekly reporting time by 30%.",
+      "Wrote Spring Boot REST APIs backed by MySQL for internal tools, covering CRUD, validation, and error handling.",
+      "Built KPI charts in Angular with Apex Charts for stakeholder reviews.",
     ],
   },
   {
@@ -30,8 +30,8 @@ const jobs = [
     when: "Jan 2022 – Apr 2022",
     bullets: [
       "Worked on backend services for analytics, live lectures, and notifications using Django and REST APIs.",
-      "Triaged production issues and shipped fixes, reducing recurring backend bug reports by 20%.",
-      "Updated internal documentation (setup + API notes), helping new developers ramp up faster.",
+      "Triaged production bugs and shipped fixes, cutting recurring backend issues by 20%.",
+      "Updated internal docs (setup guides and API notes) to help new devs get up to speed faster.",
     ],
   },
 ];

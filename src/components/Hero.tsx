@@ -158,9 +158,9 @@ const Hero = () => {
             transition={{ delay: 0.45 }}
             className="mt-6 max-w-md text-[15px] leading-relaxed text-[#888880]"
           >
-            Passionate about scalable full-stack applications, distributed
-            systems, and data-driven solutions.
-          </motion.p>
+            I like building things that scale. Full-stack apps, distributed
+            systems, backend infrastructure.
+</motion.p>
 
           {/* CTAs */}
           <motion.div

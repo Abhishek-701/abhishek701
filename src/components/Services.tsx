@@ -23,7 +23,7 @@ const items = [
   {
     icon: Brain,
     title: "AI / ML Integration",
-    text: "Embedding LLM capabilities and AWS Bedrock into scalable production workflows.",
+    text: "Wiring LLMs and AWS Bedrock into production systems that hold up at scale.",
     num: "04",
   },
 ];
