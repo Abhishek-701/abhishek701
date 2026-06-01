@@ -5,7 +5,7 @@ const education = [
   {
     school: "University of Illinois Chicago",
     degree: "Master of Science in Computer Science",
-    gpa: "GPA: 3.72 / 4.00",
+    gpa: "GPA: 3.78 / 4.00",
     period: "Aug 2024 – May 2026",
   },
   {

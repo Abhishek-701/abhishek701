@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
 
 const row1 = [
-  "Java", "Python", "TypeScript", "JavaScript", "SQL",
-  "Spring Boot", "React", "Node.js", "Django", "GraphQL",
-  "REST APIs", "AWS", "Docker", "Spark", "Scala",
+  "Go", "Java", "Python", "TypeScript", "JavaScript", "SQL",
+  "Spring Boot", "React", "Angular", "Node.js", "Django", "GraphQL",
+  "REST APIs", "Kafka", "AWS", "Docker", "Kubernetes",
 ];
 
 const row2 = [
-  "MongoDB", "PostgreSQL", "MySQL", "Firebase Firestore",
+  "MongoDB", "PostgreSQL", "Redis", "MySQL",
+  "pgvector", "OpenSearch", "RAG pipelines",
   "AWS S3", "Lambda", "EMR", "Bedrock",
-  "GitHub Actions", "CI/CD", "JUnit", "PyTest",
-  "gRPC", "HTML5", "CSS",
+  "GitHub Actions", "CI/CD", "Tailwind CSS", "HTML5",
 ];
 
 const categories = [
-  { name: "Languages", count: 7 },
-  { name: "Frameworks", count: 6 },
-  { name: "Databases", count: 4 },
-  { name: "Cloud", count: 4 },
-  { name: "Testing", count: 5 },
+  { name: "Languages", count: 6 },
+  { name: "Frameworks", count: 7 },
+  { name: "Databases", count: 5 },
+  { name: "Cloud", count: 5 },
+  { name: "AI & Search", count: 3 },
 ];
 
 interface PillProps {

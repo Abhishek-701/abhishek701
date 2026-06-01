@@ -15,7 +15,7 @@ const MONO_FONT = "14px ui-monospace, SFMono-Regular, Menlo, monospace";
 const LINE_HEIGHT = 20;
 
 const stats = [
-  { value: "3.72", label: "GPA" },
+  { value: "3.78", label: "GPA" },
   { value: "3", label: "Internships" },
   { value: "MS", label: "CS @ UIC" },
 ];

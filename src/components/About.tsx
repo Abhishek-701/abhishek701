@@ -38,7 +38,7 @@ const About = () => (
           >
             <p>
               I'm a Computer Science graduate student at the University of
-              Illinois Chicago (GPA: 3.72), driven by a deep interest in
+              Illinois Chicago (GPA: 3.78), driven by a deep interest in
               scalable systems, clean software architecture, and thoughtful
               engineering.
             </p>
