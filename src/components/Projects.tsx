@@ -98,12 +98,6 @@ const Projects = () => (
                 <span className="rounded-full bg-[#00C853] px-3 py-0.5 font-mono text-[11px] font-bold uppercase tracking-widest text-white">
                   Live
                 </span>
-                <span className="rounded-full border border-[#0047FF]/20 bg-[#EEF0FF] px-3 py-0.5 font-mono text-[11px] font-bold uppercase tracking-widest text-[#0047FF]">
-                  Co-founder
-                </span>
-                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#888880]">
-                  {featured.tag}
-                </span>
               </div>
 
               <h3 className="mb-3 font-heading text-3xl font-extrabold text-[#111111]">
