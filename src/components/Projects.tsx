@@ -6,7 +6,7 @@ const featured = {
   tag: "Currently Building",
   role: "Co-founder",
   tech: ["FastAPI", "Next.js 15", "React 19", "Postgres", "Docker"],
-  desc: "AI proxy and observability platform. Every LLM call routes through Zelyx — giving teams real-time spend tracking, per-key budget caps, and full audit trails without changing a single line of existing code.",
+  desc: "AI proxy and observability platform. Every LLM call routes through Zelyx, giving teams real-time spend tracking, per-key budget caps, and full audit trails without changing a single line of existing code.",
   live: "https://zelyx.app",
   github: null,
 };
@@ -49,7 +49,7 @@ const projects = [
     num: "04",
     title: "CodeContext MCP",
     tech: ["Python", "tree-sitter", "PostgreSQL", "pgvector", "FastMCP", "watchdog"],
-    desc: "A live-indexed codebase context server with an MCP interface. Watches a repo, parses symbols with tree-sitter, and lets LLM agents search code that doesn't fit in context — semantic and exact-match both.",
+    desc: "A live-indexed codebase context server with an MCP interface. Watches a repo, parses symbols with tree-sitter, and lets LLM agents search code that doesn't fit in context, with semantic and exact-match search.",
     tag: "Developer Tools / AI",
     accentBg: "#111111",
     accentText: "#F9F7F2",
