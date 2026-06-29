@@ -56,6 +56,17 @@ const projects = [
     github: "https://github.com/Abhishek-701/codecontext-mcp",
     live: null,
   },
+  {
+    num: "05",
+    title: "FinSight",
+    tech: ["Python", "FastAPI", "Claude", "ChromaDB", "BM25", "Docker"],
+    desc: "Financial analysis agent over SEC 10-K filings for six major companies. Hybrid RAG (BM25 + dense embeddings + cross-encoder rerank), XBRL fast path for structured metrics, and live market data — with full tool trace and inline citations.",
+    tag: "AI / Finance",
+    accentBg: "#0047FF",
+    accentText: "#EEF0FF",
+    github: "https://github.com/Abhishek-701/FinSight",
+    live: null,
+  },
 ];
 
 const Projects = () => (
