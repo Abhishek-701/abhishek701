@@ -15,7 +15,7 @@ const projects = [
   {
     num: "01",
     title: "FinSight",
-    tech: ["Python", "FastAPI", "Claude", "ChromaDB", "BM25", "Docker"],
+    tech: ["Python", "FastAPI", "ChromaDB", "BM25", "Docker"],
     desc: "Financial Q&A agent over SEC 10-K filings for six major companies. Hybrid RAG (BM25 + dense embeddings + cross-encoder rerank) with query routing, smart refusals outside the corpus, live market data, and full tool trace with inline citations.",
     tag: "AI / Finance",
     accentBg: "#111111",
@@ -214,9 +214,14 @@ const Projects = () => (
             {/* Card body */}
             <div className="flex flex-1 flex-col p-6">
               {p.live && (
-                <span className="mb-2 inline-flex w-fit items-center rounded-full bg-[#00C853] px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-widest text-white">
-                  Live
-                </span>
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-2 inline-flex w-fit items-center gap-1 rounded-full bg-[#00C853] px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-widest text-white transition-opacity hover:opacity-85"
+                >
+                  Live <ArrowUpRight className="h-3 w-3" />
+                </a>
               )}
 
               <div className="mb-1 flex items-start justify-between gap-2">
@@ -232,7 +237,7 @@ const Projects = () => (
                 {p.desc}
               </p>
 
-              <div className="flex flex-wrap gap-1.5">
+              <div className="mb-4 flex flex-wrap gap-1.5">
                 {p.tech.map((t) => (
                   <span
                     key={t}
@@ -242,6 +247,17 @@ const Projects = () => (
                   </span>
                 ))}
               </div>
+
+              {p.live && (
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#0047FF] px-4 py-2 font-mono text-xs font-bold text-white transition-opacity hover:opacity-85"
+                >
+                  Visit site <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
+              )}
             </div>
           </motion.article>
         ))}
