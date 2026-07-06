@@ -14,17 +14,6 @@ const featured = {
 const projects = [
   {
     num: "01",
-    title: "CodeContext MCP",
-    tech: ["Python", "tree-sitter", "PostgreSQL", "pgvector", "FastMCP", "watchdog"],
-    desc: "A live-indexed codebase context server with an MCP interface. Watches a repo, parses symbols with tree-sitter, and lets LLM agents search code that doesn't fit in context, with semantic and exact-match search.",
-    tag: "Developer Tools / AI",
-    accentBg: "#0047FF",
-    accentText: "#EEF0FF",
-    github: "https://github.com/Abhishek-701/codecontext-mcp",
-    live: null,
-  },
-  {
-    num: "02",
     title: "FinSight",
     tech: ["Python", "FastAPI", "Claude", "ChromaDB", "BM25", "Docker"],
     desc: "Financial Q&A agent over SEC 10-K filings for six major companies. Hybrid RAG (BM25 + dense embeddings + cross-encoder rerank) with query routing, smart refusals outside the corpus, live market data, and full tool trace with inline citations.",
@@ -33,6 +22,17 @@ const projects = [
     accentText: "#F9F7F2",
     github: "https://github.com/Abhishek-701/FinSight",
     live: "https://finsight-vh4y.onrender.com/",
+  },
+  {
+    num: "02",
+    title: "CodeContext MCP",
+    tech: ["Python", "tree-sitter", "PostgreSQL", "pgvector", "FastMCP", "watchdog"],
+    desc: "A live-indexed codebase context server with an MCP interface. Watches a repo, parses symbols with tree-sitter, and lets LLM agents search code that doesn't fit in context, with semantic and exact-match search.",
+    tag: "Developer Tools / AI",
+    accentBg: "#0047FF",
+    accentText: "#EEF0FF",
+    github: "https://github.com/Abhishek-701/codecontext-mcp",
+    live: null,
   },
   {
     num: "03",
@@ -213,6 +213,12 @@ const Projects = () => (
 
             {/* Card body */}
             <div className="flex flex-1 flex-col p-6">
+              {p.live && (
+                <span className="mb-2 inline-flex w-fit items-center rounded-full bg-[#00C853] px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-widest text-white">
+                  Live
+                </span>
+              )}
+
               <div className="mb-1 flex items-start justify-between gap-2">
                 <h3 className="font-heading text-lg font-bold leading-snug text-[#111111]">
                   {p.title}
