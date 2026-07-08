@@ -5,25 +5,25 @@ const items = [
   {
     icon: Code2,
     title: "Full Stack Development",
-    text: "End-to-end web apps using React, Spring Boot, Node.js, and RESTful APIs.",
+    text: "End-to-end apps in React, Next.js, Angular, and Spring Boot, from CEO dashboards at Mobileware to the Zelyx product today.",
     num: "01",
   },
   {
     icon: Server,
     title: "Backend Engineering",
-    text: "Scalable microservices, API design, and database architecture for production systems.",
+    text: "Django and Spring Boot APIs, database design, and service architecture, the backend work I've done across three internships.",
     num: "02",
   },
   {
     icon: Database,
     title: "Data Engineering / ETL",
-    text: "Pipelines, dashboards, and data integrations using AWS EMR, Spark, and Python.",
+    text: "ETL pipelines and real-time dashboards, like the Oracle ETL rebuild at Drishti that cut ingestion time by 25%.",
     num: "03",
   },
   {
     icon: Brain,
     title: "AI / ML Integration",
-    text: "Wiring LLMs and AWS Bedrock into production systems that hold up at scale.",
+    text: "RAG pipelines and LLM infrastructure, from FinSight's hybrid search to Zelyx's LLM proxy and observability layer.",
     num: "04",
   },
 ];

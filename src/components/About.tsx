@@ -37,20 +37,30 @@ const About = () => (
             className="space-y-5 text-[15px] leading-[1.9] text-[#666660]"
           >
             <p>
-              I'm an MS CS student at UIC (GPA: 3.78). I care a lot about
-              building systems that are reliable, well-designed, and actually
-              maintainable long-term.
+              I'm an MS CS student at UIC (GPA: 3.78). Right now I'm building
+              Zelyx, an AI proxy and observability platform that routes LLM
+              calls through a self-hosted proxy so teams get real-time spend
+              tracking, budget caps, and full audit trails without touching
+              their existing code.
             </p>
             <p>
-              I've done three internships in India, working on ETL pipelines,
-              CEO dashboards, real-time analytics, and production REST APIs.
-              I'm comfortable on the backend and I like working close to the
-              frontend too.
+              Before that I built FinSight, a RAG based Q&A agent over SEC
+              10-K filings, and CodeContext MCP, a live-indexed code search
+              server that lets LLM agents query codebases too large for their
+              context window. I've also worked in distributed systems,
+              building a Spark pipeline in Scala for encoder-decoder
+              workloads deployed on AWS Lambda and EMR.
             </p>
             <p>
-              Looking for full-time roles in full-stack or backend engineering.
-              Especially interested in teams working on distributed systems,
-              microservices, or cloud infrastructure.
+              Before grad school I did three internships in India. At Drishti
+              Software Solutions I rebuilt an Oracle ETL pipeline and improved
+              ingestion throughput by 25%. At Mobileware Technologies I built
+              a CEO-facing analytics dashboard and wrote Spring Boot APIs for
+              internal tools. At Cleverground I worked on Django backend
+              services for live lectures and notifications. Looking for
+              full-time roles in full-stack or backend engineering, ideally
+              on teams working with distributed systems, LLM infrastructure,
+              or cloud platforms.
             </p>
           </motion.div>
         </div>

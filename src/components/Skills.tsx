@@ -62,8 +62,9 @@ const Skills = () => (
           </h2>
         </div>
         <p className="max-w-xs text-sm leading-relaxed text-[#666660]">
-          Languages, frameworks, cloud platforms, and data engineering
-          tools — the full range.
+          Languages, frameworks, and cloud tools I've used across three
+          internships and a handful of side projects, from ETL pipelines to
+          LLM infrastructure.
         </p>
       </motion.div>
     </div>
