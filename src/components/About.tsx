@@ -24,9 +24,9 @@ const About = () => (
             className="mb-10 font-heading font-extrabold leading-tight text-[#111111]"
             style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
           >
-            Building systems that
+            A bit about
             <br />
-            <span style={{ color: "#0047FF" }}>actually scale</span>
+            <span style={{ color: "#0047FF" }}>what I do</span>
           </motion.h2>
 
           <motion.div
@@ -37,30 +37,24 @@ const About = () => (
             className="space-y-5 text-[15px] leading-[1.9] text-[#666660]"
           >
             <p>
-              I'm an MS CS student at UIC (GPA: 3.78). Right now I'm building
-              Zelyx, an AI proxy and observability platform that routes LLM
-              calls through a self-hosted proxy so teams get real-time spend
-              tracking, budget caps, and full audit trails without touching
-              their existing code.
+              I'm finishing my MS in Computer Science at UIC (GPA 3.78). Most
+              of my time right now goes into Zelyx, a proxy that sits in front
+              of LLM APIs so teams can see spend, set budget limits, and keep
+              an audit log without rewriting their apps.
             </p>
             <p>
-              Before that I built FinSight, a RAG based Q&A agent over SEC
-              10-K filings, and CodeContext MCP, a live-indexed code search
-              server that lets LLM agents query codebases too large for their
-              context window. I've also worked in distributed systems,
-              building a Spark pipeline in Scala for encoder-decoder
-              workloads deployed on AWS Lambda and EMR.
+              Outside of that I've shipped a few other projects: FinSight for
+              answering questions over SEC filings, CodeContext for searching
+              large codebases, Polyglot for voice support across a few
+              languages, and a computer-use tool that records a browser
+              workflow once and replays it later.
             </p>
             <p>
-              Before grad school I did three internships in India. At Drishti
-              Software Solutions I rebuilt an Oracle ETL pipeline and improved
-              ingestion throughput by 25%. At Mobileware Technologies I built
-              a CEO-facing analytics dashboard and wrote Spring Boot APIs for
-              internal tools. At Cleverground I worked on Django backend
-              services for live lectures and notifications. Looking for
-              full-time roles in full-stack or backend engineering, ideally
-              on teams working with distributed systems, LLM infrastructure,
-              or cloud platforms.
+              Before grad school I interned three times in India. At Drishti I
+              sped up an Oracle ETL pipeline by about 25%. At Mobileware I
+              built a CEO dashboard and Spring Boot APIs. At Cleverground I
+              worked on Django services for live lectures and notifications.
+              I'm looking for full-time backend or full-stack roles.
             </p>
           </motion.div>
         </div>
