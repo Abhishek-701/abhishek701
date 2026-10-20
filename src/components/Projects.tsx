@@ -3,11 +3,11 @@ import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 
 const featured = {
   title: "Zelyx",
-  tag: "Currently Building",
-  role: "Co-founder",
-  tech: ["FastAPI", "Next.js 15", "React 19", "Postgres", "Docker"],
-  desc: "AI proxy and observability platform. Every LLM call routes through Zelyx, giving teams real-time spend tracking, per-key budget caps, and full audit trails without changing a single line of existing code.",
-  live: "https://zelyx.app",
+  tag: "AI Proxy",
+  role: null,
+  tech: ["Next.js 15", "FastAPI", "Postgres", "Docker"],
+  desc: "AI proxy and observability platform that routes LLM calls through a self-hosted proxy. Gate engine enforces per-key budget caps, model allowlists, and payment-risk signals. Dashboard covers cost, latency, token usage, and errors across teams and models.",
+  live: "https://nexus-alpha-five-55.vercel.app",
   github: null,
 };
 
@@ -15,8 +15,8 @@ const projects = [
   {
     num: "01",
     title: "FinSight",
-    tech: ["Python", "FastAPI", "ChromaDB", "BM25", "Docker"],
-    desc: "Financial Q&A agent over SEC 10-K filings for six major companies. Hybrid RAG (BM25 + dense embeddings + cross-encoder rerank) with query routing, smart refusals outside the corpus, live market data, and full tool trace with inline citations.",
+    tech: ["Python", "BM25", "XBRL", "ChromaDB", "Docker"],
+    desc: "Grounded financial research agent over live SEC filings. Query router checks an XBRL fact store first, then falls back to hybrid BM25 + dense retrieval. Three-layer refusal system and eval suite so answers ship with traceable evidence.",
     tag: "AI / Finance",
     accentBg: "#111111",
     accentText: "#F9F7F2",
@@ -26,8 +26,8 @@ const projects = [
   {
     num: "02",
     title: "CodeContext MCP",
-    tech: ["Python", "tree-sitter", "PostgreSQL", "pgvector", "FastMCP", "watchdog"],
-    desc: "A live-indexed codebase context server with an MCP interface. Watches a repo, parses symbols with tree-sitter, and lets LLM agents search code that doesn't fit in context, with semantic and exact-match search.",
+    tech: ["Python", "tree-sitter", "PostgreSQL", "pgvector", "watchdog"],
+    desc: "Live-indexed codebase context server with five MCP tools. Watches a repo, parses symbols with tree-sitter into PostgreSQL, and supports semantic search via pgvector plus exact symbol and file lookups.",
     tag: "Developer Tools / AI",
     accentBg: "#0047FF",
     accentText: "#EEF0FF",
@@ -54,17 +54,6 @@ const projects = [
     accentBg: "#111111",
     accentText: "#F9F7F2",
     github: "https://github.com/Abhishek-701/computer-use-automation-system",
-    live: null,
-  },
-  {
-    num: "05",
-    title: "Crypto & Stock Market Advisor",
-    tech: ["React", "Django", "MongoDB"],
-    desc: "Integrated third-party market data APIs with caching and rate-limit handling. Compound indexes in MongoDB reduced read latency to under 300ms.",
-    tag: "Full Stack",
-    accentBg: "#0047FF",
-    accentText: "#EEF0FF",
-    github: null,
     live: null,
   },
 ];
@@ -138,7 +127,7 @@ const Projects = () => (
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-full bg-[#0047FF] px-4 py-2 font-mono text-xs font-bold text-white transition-opacity hover:opacity-85"
               >
-                Visit zelyx.app <ArrowUpRight className="h-3.5 w-3.5" />
+                Visit live demo <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
               {featured.github && (
                 <a
@@ -160,7 +149,7 @@ const Projects = () => (
                 <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
-                <span className="ml-2 font-mono text-[10px] text-[#999990]">zelyx.app/overview</span>
+                <span className="ml-2 font-mono text-[10px] text-[#999990]">zelyx / overview</span>
               </div>
               <img
                 src="/zelyx-dashboard.png"
@@ -172,7 +161,7 @@ const Projects = () => (
         </div>
       </motion.div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
         {projects.map((p, i) => (
           <motion.article
             key={i}

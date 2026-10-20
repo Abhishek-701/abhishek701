@@ -2,14 +2,23 @@ import { motion } from "framer-motion";
 
 const jobs = [
   {
+    role: "Software Engineer, AI",
+    company: "Layered AI Inc.",
+    where: "Chicago, IL (Remote)",
+    when: "Sep 2026 – Present",
+    bullets: [
+      "Test end-to-end latency on production AI agent calls and recommend fixes, cutting response time from over 2s to 1.5–1.7s so far, with a target of under 1.2s.",
+      "Act as a forward deployed engineer, talking to prospective customers about their workflows and where AI agents fit.",
+    ],
+  },
+  {
     role: "Software Development Intern",
     company: "Drishti Software Solutions",
     where: "Kolhapur, India",
-    when: "Oct 2022 – Feb 2023",
+    when: "Jun 2023 – Oct 2023",
     bullets: [
-      "Found sequential query patterns and missing indexes in an Oracle Data Integrator ETL pipeline. Rebuilt the jobs with batch processing and better indexes, improving ingestion throughput by 25%.",
-      "Added quantitative analysis features to the LIMS, cutting reporting turnaround by 15%.",
-      "Built real-time dashboards in ZKoss so teams could track quality metrics without running manual reports.",
+      "Found sequential query patterns and missing indexes in an Oracle Data Integrator ETL pipeline. Restructured jobs with batch processing and targeted indexes, improving ingestion throughput by 25%.",
+      "Added quantitative analysis features to a Laboratory Information Management System, cutting reporting turnaround by 15%.",
     ],
   },
   {
@@ -18,9 +27,8 @@ const jobs = [
     where: "Mumbai, India",
     when: "Jun 2022 – Jul 2022",
     bullets: [
-      "Built a CEO-facing analytics dashboard that cut weekly reporting time by 30%.",
-      "Wrote Spring Boot REST APIs backed by MySQL for internal tools, covering CRUD, validation, and error handling.",
-      "Built KPI charts in Angular with Apex Charts for stakeholder reviews.",
+      "Delivered a CEO-facing analytics dashboard with interactive KPI charts (Angular, Apex Charts); cut weekly reporting turnaround by 30%.",
+      "Wrote Spring Boot REST APIs backed by MySQL for internal enterprise workflows, covering CRUD, validation, and error handling.",
     ],
   },
   {
@@ -30,8 +38,7 @@ const jobs = [
     when: "Jan 2022 – Apr 2022",
     bullets: [
       "Worked on backend services for analytics, live lectures, and notifications using Django and REST APIs.",
-      "Triaged production bugs and shipped fixes, cutting recurring backend issues by 20%.",
-      "Updated internal docs (setup guides and API notes) to help new devs get up to speed faster.",
+      "Triaged production issues and shipped fixes, reducing recurring backend bug reports by 20%.",
     ],
   },
 ];

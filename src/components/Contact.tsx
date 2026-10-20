@@ -72,7 +72,7 @@ const Contact = () => {
 
             <div className="relative">
               <p className="mb-8 text-sm leading-relaxed text-[#888880]">
-                Open to full-time roles, freelance work, and side projects.
+                Open to interesting opportunities and collaborations.
                 Drop me a line.
               </p>
 

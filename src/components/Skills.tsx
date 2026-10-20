@@ -2,23 +2,23 @@ import { motion } from "framer-motion";
 
 const row1 = [
   "Go", "Java", "Python", "TypeScript", "JavaScript", "SQL",
-  "Spring Boot", "React", "Angular", "Node.js", "Django", "GraphQL",
-  "REST APIs", "Kafka", "AWS", "Docker", "Kubernetes",
+  "Spring Boot", "Django", "Node.js", "Kafka", "React", "Angular",
+  "Tailwind CSS", "AWS", "Docker", "Kubernetes",
 ];
 
 const row2 = [
-  "MongoDB", "PostgreSQL", "Redis", "MySQL",
-  "pgvector", "OpenSearch", "RAG pipelines",
+  "PostgreSQL", "MongoDB", "Redis",
+  "RAG pipelines", "OpenSearch", "pgvector", "LangChain", "LangGraph",
   "AWS S3", "Lambda", "EMR", "Bedrock",
-  "GitHub Actions", "CI/CD", "Tailwind CSS", "HTML5",
+  "GitHub Actions", "CI/CD",
 ];
 
 const categories = [
   { name: "Languages", count: 6 },
-  { name: "Frameworks", count: 7 },
-  { name: "Databases", count: 5 },
-  { name: "Cloud", count: 5 },
-  { name: "AI & Search", count: 3 },
+  { name: "Backend", count: 7 },
+  { name: "Cloud", count: 6 },
+  { name: "AI & Search", count: 5 },
+  { name: "Frontend", count: 3 },
 ];
 
 interface PillProps {
@@ -62,9 +62,9 @@ const Skills = () => (
           </h2>
         </div>
         <p className="max-w-xs text-sm leading-relaxed text-[#666660]">
-          Languages, frameworks, and cloud tools I've used across three
-          internships and a handful of side projects, from ETL pipelines to
-          LLM infrastructure.
+          Languages, backend, cloud, and AI tools I've used at Layered AI,
+          across three internships, and on side projects from ETL to LLM
+          proxies.
         </p>
       </motion.div>
     </div>

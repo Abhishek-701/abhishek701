@@ -37,24 +37,24 @@ const About = () => (
             className="space-y-5 text-[15px] leading-[1.9] text-[#666660]"
           >
             <p>
-              I'm finishing my MS in Computer Science at UIC (GPA 3.78). Most
-              of my time right now goes into Zelyx, a proxy that sits in front
-              of LLM APIs so teams can see spend, set budget limits, and keep
-              an audit log without rewriting their apps.
+              I'm finishing my MS in Computer Science at UIC (GPA 3.78). Right
+              now I'm a Software Engineer, AI at Layered AI, where I measure
+              production agent latency and work with prospective customers on
+              how AI agents fit into their workflows.
             </p>
             <p>
-              Outside of that I've shipped a few other projects: FinSight for
-              answering questions over SEC filings, CodeContext for searching
-              large codebases, Polyglot for voice support across a few
-              languages, and a computer-use tool that records a browser
-              workflow once and replays it later.
+              On the side I've built Zelyx (an LLM proxy with spend tracking
+              and budget gates), FinSight (financial research over SEC
+              filings), and CodeContext (live code search for LLM agents). I've
+              also shipped Polyglot, a cross-lingual voice agent, and a
+              computer-use tool that records a browser workflow once and
+              replays it later.
             </p>
             <p>
               Before grad school I interned three times in India. At Drishti I
               sped up an Oracle ETL pipeline by about 25%. At Mobileware I
               built a CEO dashboard and Spring Boot APIs. At Cleverground I
               worked on Django services for live lectures and notifications.
-              I'm looking for full-time backend or full-stack roles.
             </p>
           </motion.div>
         </div>

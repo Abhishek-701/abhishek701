@@ -23,9 +23,9 @@ const messages: Message[] = [
   { from: "them", text: "Hey! Where are you currently based?" },
   { from: "me",   text: "Chicago, IL 📍" },
   { from: "them", text: "What's your background?" },
-  { from: "me",   text: "MS CS at UIC, 3.78 GPA. Did 3 internships building ETL pipelines, dashboards, and REST APIs." },
-  { from: "them", text: "What kind of roles are you targeting?" },
-  { from: "me",   text: "Backend and full-stack. Happy working close to infra and APIs." },
+  { from: "me",   text: "MS CS at UIC, 3.78 GPA. Software Engineer, AI at Layered. Before that, 3 internships on ETL, dashboards, and APIs." },
+  { from: "them", text: "What are you focused on lately?" },
+  { from: "me",   text: "Production AI agent latency, customer workflows, and the systems around LLM apps." },
   { from: "them", text: "What do you do outside of coding?" },
   { from: "me",   text: "Soccer, basketball, squash ⚡" },
 ];

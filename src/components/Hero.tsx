@@ -5,9 +5,9 @@ import { prepareWithSegments, layoutWithLines } from "@chenglou/pretext";
 import headshot from "@/assets/headshot.jpg";
 
 const roles = [
+  "Software Engineer, AI @ Layered",
   "Full Stack Developer",
-  "Distributed Systems Engineer",
-  "CS Graduate @ UIC",
+  "MS CS @ UIC",
 ];
 
 // The canvas font that matches Tailwind's font-mono text-sm (14px)
@@ -16,7 +16,7 @@ const LINE_HEIGHT = 20;
 
 const stats = [
   { value: "3.78", label: "GPA" },
-  { value: "3", label: "Internships" },
+  { value: "4", label: "Roles" },
   { value: "MS", label: "CS @ UIC" },
 ];
 
@@ -104,7 +104,7 @@ const Hero = () => {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
             <span className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[#888880]">
-              Available for Opportunities
+              Software Engineer, AI @ Layered
             </span>
           </motion.div>
 
@@ -158,9 +158,9 @@ const Hero = () => {
             transition={{ delay: 0.45 }}
             className="mt-6 max-w-md text-[15px] leading-relaxed text-[#888880]"
           >
-            I like building things that scale. Full-stack apps, distributed
-            systems, backend infrastructure.
-</motion.p>
+            I work on production AI agents and the systems around them.
+            Backend, full-stack, and a lot of latency hunting.
+          </motion.p>
 
           {/* CTAs */}
           <motion.div

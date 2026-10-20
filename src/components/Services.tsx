@@ -11,19 +11,19 @@ const items = [
   {
     icon: Server,
     title: "Backend Engineering",
-    text: "Django and Spring Boot APIs, database design, and service architecture, the backend work I've done across three internships.",
+    text: "Django and Spring Boot APIs, database design, and service architecture from three internships and production AI work.",
     num: "02",
   },
   {
     icon: Database,
     title: "Data Engineering / ETL",
-    text: "ETL pipelines and real-time dashboards, like the Oracle ETL rebuild at Drishti that cut ingestion time by 25%.",
+    text: "ETL pipelines and reporting systems, like the Oracle ETL rebuild at Drishti that improved ingestion throughput by 25%.",
     num: "03",
   },
   {
     icon: Brain,
     title: "AI / ML Integration",
-    text: "RAG pipelines and LLM infrastructure, from FinSight's hybrid search to Zelyx's LLM proxy and observability layer.",
+    text: "Production AI agents, RAG, and LLM proxies. Latency work at Layered AI, FinSight's grounded retrieval, and Zelyx's gate engine.",
     num: "04",
   },
 ];
