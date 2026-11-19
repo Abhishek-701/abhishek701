@@ -23,7 +23,7 @@ const items = [
   {
     icon: Brain,
     title: "AI / ML Integration",
-    text: "Production AI agents, RAG, and LLM proxies. Latency work at Layered AI, FinSight's grounded retrieval, and Zelyx's gate engine.",
+    text: "Production AI agents, RAG, and LLM proxies. Eval and latency work at Layered AI, FinSight's grounded retrieval, and Zelyx's gate engine.",
     num: "04",
   },
 ];

@@ -38,9 +38,10 @@ const About = () => (
           >
             <p>
               I'm finishing my MS in Computer Science at UIC (GPA 3.78). Right
-              now I'm a Software Engineer, AI at Layered AI, where I measure
-              production agent latency and work with prospective customers on
-              how AI agents fit into their workflows.
+              now I'm a Software Engineer, AI at Layered AI, where I built an
+              eval harness for a production voice agent (it caught 8 unflagged
+              bugs), cut call latency from over 2s to about 1.6s, and work with
+              prospective customers on how AI agents fit into their workflows.
             </p>
             <p>
               On the side I've built Zelyx (an LLM proxy with spend tracking

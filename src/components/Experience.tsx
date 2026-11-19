@@ -7,8 +7,9 @@ const jobs = [
     where: "Chicago, IL (Remote)",
     when: "Sep 2026 – Present",
     bullets: [
-      "Test end-to-end latency on production AI agent calls and recommend fixes, cutting response time from over 2s to 1.5–1.7s so far, with a target of under 1.2s.",
-      "Act as a forward deployed engineer, talking to prospective customers about their workflows and where AI agents fit.",
+      "Built an automated eval harness for a production voice agent (hand-coded Twilio bridge, Gemini) that scores scripted calls against the live model, backed by 260 offline CI tests. First sweep surfaced 8 unflagged bugs, including incomplete booking readbacks in 23% of decisions.",
+      "Benchmarked the bridge against Pipecat and profiled call latency, cutting response time from over 2s to 1.5–1.7s (target under 1.2s). Cover barge-in with simulated calls in Cekura.",
+      "Act as a forward deployed engineer, reaching out to prospective customers to understand their workflows and where AI agents fit.",
     ],
   },
   {
@@ -37,8 +38,7 @@ const jobs = [
     where: "Pune, India",
     when: "Jan 2022 – Apr 2022",
     bullets: [
-      "Worked on backend services for analytics, live lectures, and notifications using Django and REST APIs.",
-      "Triaged production issues and shipped fixes, reducing recurring backend bug reports by 20%.",
+      "Built Django REST services for analytics, live lectures, and notifications; cut recurring backend bugs by 20%.",
     ],
   },
 ];
